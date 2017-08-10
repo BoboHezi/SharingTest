@@ -7,6 +7,9 @@ import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 import eli.per.sharingtest.R;
 
+/**
+ * Author Eli Chang
+ */
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public static final String TAG = "MainActivity";
