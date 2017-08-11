@@ -97,13 +97,11 @@ public class ShareSina extends BaseShare implements WbShareCallback {
     private ImageObject getImageObject(File imageFile) {
         ImageObject imageObject = new ImageObject();
 
-        if (imageFile == null){
-            Bitmap bitmap = BitmapFactory.decodeResource(context.getResources(), R.drawable.photo);
-            imageObject.setImageObject(bitmap);
-        } else {
-            Bitmap bitmap = BitmapFactory.decodeFile(imageFile.getPath(), null);
-            imageObject.setImageObject(bitmap);
+        if (imageFile == null) {
+            imageFile = new File(context.getExternalFilesDir(null) + "/photo/photo.jpg");
         }
+        Bitmap bitmap = BitmapFactory.decodeFile(imageFile.getPath(), null);
+        imageObject.setImageObject(bitmap);
         return imageObject;
     }
 
@@ -116,9 +114,9 @@ public class ShareSina extends BaseShare implements WbShareCallback {
         VideoSourceObject videoObject = new VideoSourceObject();
 
         if (videoFile == null) {
-        } else {
-            videoObject.videoPath = Uri.fromFile(videoFile);
+            videoFile = new File(context.getExternalFilesDir(null) + "/video/VID_20170811_105225.mp4");
         }
+        videoObject.videoPath = Uri.fromFile(videoFile);
         return videoObject;
     }
 
@@ -129,6 +127,9 @@ public class ShareSina extends BaseShare implements WbShareCallback {
     private MultiImageObject getMultiImageObject(File files[]) {
         MultiImageObject multiImageObject = new MultiImageObject();
 
+        if (files == null) {
+            files = new File(context.getExternalFilesDir(null) + "/photo/").listFiles();
+        }
         ArrayList<Uri> fileList = new ArrayList<>();
         for (File file : files) {
             fileList.add(Uri.fromFile(file));

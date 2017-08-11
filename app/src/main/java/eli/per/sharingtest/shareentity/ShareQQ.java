@@ -30,6 +30,10 @@ public class ShareQQ extends BaseShare implements IUiListener{
      * @param imageFile 图片文件
      */
     public void shareImage(File imageFile) {
+        if (imageFile == null) {
+            imageFile = new File(context.getExternalFilesDir(null) + "/photo/photo.jpg");
+        }
+
         final Bundle params = new Bundle();
         params.putInt(QQShare.SHARE_TO_QQ_KEY_TYPE, QQShare.SHARE_TO_QQ_TYPE_IMAGE);
         params.putString(QQShare.SHARE_TO_QQ_IMAGE_LOCAL_URL, imageFile.getPath());

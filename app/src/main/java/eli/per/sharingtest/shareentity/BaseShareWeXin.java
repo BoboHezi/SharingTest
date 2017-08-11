@@ -32,6 +32,11 @@ public class BaseShareWeXin extends BaseShare {
 
     @Override
     public void shareImage(File imageFile) {
+
+        if (imageFile == null) {
+            imageFile = new File(context.getExternalFilesDir(null) + "/photo/photo.jpg");
+        }
+
         //初始化WXImageObject和WXMediaMessage对象
         Bitmap bitmap = BitmapFactory.decodeFile(imageFile.getPath(), null);
         WXImageObject imageObject = new WXImageObject(bitmap);
@@ -54,6 +59,10 @@ public class BaseShareWeXin extends BaseShare {
 
     @Override
     public void shareVideo(File videoFile) {
+        if (videoFile == null) {
+            videoFile = new File(context.getExternalFilesDir(null) + "/video/VID_20170811_105225.mp4");
+        }
+
         //初始化WXVideoObject，并设置视频路径
         WXVideoObject videoObject = new WXVideoObject();
         videoObject.videoUrl = videoFile.getPath();

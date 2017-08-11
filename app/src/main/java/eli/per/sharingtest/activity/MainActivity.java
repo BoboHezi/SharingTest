@@ -5,6 +5,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+
 import eli.per.sharingtest.R;
 
 /**
@@ -26,6 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setContentView(R.layout.activity_main);
 
         initView();
+
+        copyFile("photo/IMG_20170811_104735.png");
+        copyFile("photo/IMG_20170811_105222.png");
+        copyFile("photo/photo.jpg");
+        copyFile("video/VID_20170811_105225.mp4");
     }
 
     private void initView() {
@@ -79,6 +91,43 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         if (shareEntity.getShareQZone() != null) {
             shareEntity.getShareQZone().tencent.onActivityResult(requestCode, resultCode, data);
+        }
+    }
+
+    private void copyFile(final String filePath) {
+
+        File folder = new File(getExternalFilesDir(null) + "/photo");
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+        folder = new File(getExternalFilesDir(null) + "/video");
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
+
+        final File file = new File(getExternalFilesDir(null).getPath() + "/" + filePath);
+        if (!file.exists()) {
+            Thread thread = new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        InputStream inputStream = getAssets().open(filePath);
+                        OutputStream outputStream = new FileOutputStream(file);
+                        byte buffer[] = new byte[1444];
+                        int readSize;
+
+                        while ( (readSize = inputStream.read(buffer)) > 0) {
+                            outputStream.write(buffer, 0, readSize);
+                        }
+
+                        inputStream.close();
+                        outputStream.close();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                }
+            });
+            thread.start();
         }
     }
 }

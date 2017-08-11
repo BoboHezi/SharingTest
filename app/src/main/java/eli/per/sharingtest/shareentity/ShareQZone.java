@@ -32,6 +32,9 @@ public class ShareQZone extends BaseShare implements IUiListener {
      * @param imageFile 图片文件
      */
     public void shareImage(File imageFile) {
+        if (imageFile == null) {
+            imageFile = new File(context.getExternalFilesDir(null) + "/photo/photo.jpg");
+        }
         ArrayList<String> images = new ArrayList<>();
         images.add(imageFile.getPath());
         publishImages(images);
@@ -42,6 +45,9 @@ public class ShareQZone extends BaseShare implements IUiListener {
      * @param imageFiles 图片文件数组
      */
     public void shareMultiImage(File imageFiles[]) {
+        if (imageFiles == null) {
+            imageFiles = new File(context.getExternalFilesDir(null) + "/photo/").listFiles();
+        }
         ArrayList<String> images = new ArrayList<>();
         for (File file : imageFiles) {
             images.add(file.getPath());
@@ -54,6 +60,9 @@ public class ShareQZone extends BaseShare implements IUiListener {
      * @param videoFile 视频文件
      */
     public void shareVideo(File videoFile) {
+        if (videoFile == null) {
+            videoFile = new File(context.getExternalFilesDir(null) + "/video/VID_20170811_105225.mp4");
+        }
         final Bundle params = new Bundle();
         params.putInt(QzoneShare.SHARE_TO_QZONE_KEY_TYPE, QzonePublish.PUBLISH_TO_QZONE_TYPE_PUBLISHVIDEO);
         params.putString(QzonePublish.PUBLISH_TO_QZONE_VIDEO_PATH, videoFile.getPath());

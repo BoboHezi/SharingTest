@@ -95,12 +95,11 @@ public class ShareEntity implements OnPlatformSelected {
                 break;
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareSina.shareVideo(new File("/sdcard/1/beach.mp4"));
+                shareSina.shareVideo(null);
                 break;
             case SHARE_TYPE_MULTIIMAGE:
                 //分享多张图片
-                File files[] = new File("/sdcard/blueeye/photos/").listFiles();
-                shareSina.shareMultiImage(files);
+                shareSina.shareMultiImage(null);
                 break;
         }
         shareType = SHARE_TYPE_TEXT;
@@ -117,7 +116,7 @@ public class ShareEntity implements OnPlatformSelected {
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享单张图片
-                shareQQ.shareImage(new File("/storage/emulated/0/1/photo.jpg"));
+                shareQQ.shareImage(null);
                 break;
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();
@@ -137,16 +136,15 @@ public class ShareEntity implements OnPlatformSelected {
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享单张图片
-                shareQZone.shareImage(new File("/storage/emulated/0/1/photo.jpg"));
+                shareQZone.shareImage(null);
                 break;
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareQZone.shareVideo(new File("/storage/emulated/0/1/video.mov"));
+                shareQZone.shareVideo(null);
                 break;
             case SHARE_TYPE_MULTIIMAGE:
                 //分享多张图片
-                File files[] = new File("/sdcard/blueeye/photos/").listFiles();
-                shareQZone.shareMultiImage(files);
+                shareQZone.shareMultiImage(null);
                 break;
         }
         shareType = SHARE_TYPE_TEXT;
@@ -163,11 +161,11 @@ public class ShareEntity implements OnPlatformSelected {
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享图片
-                shareWeChat.shareImage(new File("/storage/emulated/0/1/photo.jpg"));
+                shareWeChat.shareImage(null);
                 break;
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareWeChat.shareVideo(new File("/storage/emulated/0/1/video.mov"));
+                shareWeChat.shareVideo(null);
                 break;
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();
@@ -187,12 +185,12 @@ public class ShareEntity implements OnPlatformSelected {
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享图片
-                shareCircleFriends.shareImage(new File("/storage/emulated/0/1/photo.jpg"));
+                shareCircleFriends.shareImage(null);
                 break;
 
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareCircleFriends.shareVideo(new File("/storage/emulated/0/1/video.mov"));
+                shareCircleFriends.shareVideo(null);
                 break;
 
             default:
