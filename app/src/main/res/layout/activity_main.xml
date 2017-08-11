@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="picture"/>
+            android:text="picture" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/sharevideo"
@@ -26,7 +26,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="video"/>
+            android:text="video" />
 
         <android.support.v7.widget.AppCompatButton
             android:id="@+id/sharemultiimage"
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="MultiImage"/>
+            android:text="MultiImage" />
 
     </LinearLayout>
 

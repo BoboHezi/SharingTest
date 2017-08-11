@@ -11,6 +11,7 @@ public class Util {
 
     /**
      * 将Bitmap对象转为字节数组
+     *
      * @param bitmap
      * @param needRecycle
      * @return
@@ -41,14 +42,13 @@ public class Util {
             try {
                 baos.close();
                 return result;
-            } catch (Exception e){
+            } catch (Exception e) {
             }
             width = bitmap.getHeight();
         }
     }
 
     /**
-     *
      * @param type
      * @return
      */
@@ -58,6 +58,7 @@ public class Util {
 
     /**
      * 获取视频的缩略图
+     *
      * @param videoPath 视频路径
      * @param width     缩略图宽度
      * @param height    缩略图高度

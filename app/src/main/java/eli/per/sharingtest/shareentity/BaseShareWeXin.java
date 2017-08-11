@@ -5,12 +5,14 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
+
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
 import com.tencent.mm.opensdk.modelmsg.WXVideoObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
+
 import java.io.File;
 
 public class BaseShareWeXin extends BaseShare {
@@ -92,6 +94,7 @@ public class BaseShareWeXin extends BaseShare {
 
     /**
      * 设置分享的平台  好友/朋友圈
+     *
      * @param scene
      */
     public void setScene(int scene) {

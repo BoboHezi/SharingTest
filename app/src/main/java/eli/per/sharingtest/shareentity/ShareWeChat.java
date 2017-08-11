@@ -5,7 +5,7 @@ import android.content.Context;
 
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 
-public class ShareWeChat extends BaseShareWeXin{
+public class ShareWeChat extends BaseShareWeXin {
 
     public ShareWeChat(Context context, Activity activity) {
         super(context, activity);

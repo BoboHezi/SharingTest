@@ -22,18 +22,21 @@ public abstract class BaseShare {
 
     /**
      * 分享图片
+     *
      * @param imageFile
      */
     public abstract void shareImage(File imageFile);
 
     /**
      * 分享视频
+     *
      * @param videoFile
      */
     public abstract void shareVideo(File videoFile);
 
     /**
      * 分享图片组
+     *
      * @param imageFiles
      */
     public abstract void shareMultiImage(File imageFiles[]);

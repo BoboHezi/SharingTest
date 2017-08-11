@@ -6,6 +6,7 @@ package eli.per.sharingtest.inter;
 public interface OnPlatformSelected {
     /**
      * 平台选择后的方法
+     *
      * @param platformID 对应平台的ID
      */
     void getSelectedPlatform(int platformID);

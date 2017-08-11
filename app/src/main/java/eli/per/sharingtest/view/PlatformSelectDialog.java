@@ -14,7 +14,7 @@ import eli.per.sharingtest.R;
 import eli.per.sharingtest.activity.ShareEntity;
 import eli.per.sharingtest.inter.OnPlatformSelected;
 
-public class PlatformSelectDialog extends Dialog implements View.OnClickListener{
+public class PlatformSelectDialog extends Dialog implements View.OnClickListener {
 
     private Context context;
 
@@ -53,6 +53,7 @@ public class PlatformSelectDialog extends Dialog implements View.OnClickListener
 
     /**
      * 实例化接口
+     *
      * @param platformSelected
      */
     public void setOnPlatformSelected(OnPlatformSelected platformSelected) {

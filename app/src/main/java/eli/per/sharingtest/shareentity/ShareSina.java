@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.widget.Toast;
+
 import com.sina.weibo.sdk.WbSdk;
 import com.sina.weibo.sdk.api.ImageObject;
 import com.sina.weibo.sdk.api.MultiImageObject;
@@ -15,8 +16,10 @@ import com.sina.weibo.sdk.api.WeiboMultiMessage;
 import com.sina.weibo.sdk.auth.AuthInfo;
 import com.sina.weibo.sdk.share.WbShareCallback;
 import com.sina.weibo.sdk.share.WbShareHandler;
+
 import java.io.File;
 import java.util.ArrayList;
+
 import eli.per.sharingtest.R;
 import eli.per.sharingtest.inter.Constants;
 
@@ -43,6 +46,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 分享图片
+     *
      * @param imageFile 图片文件
      */
     public void shareImage(File imageFile) {
@@ -54,6 +58,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 分享视频
+     *
      * @param videoFile 视频文件
      */
     public void shareVideo(File videoFile) {
@@ -65,6 +70,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 分享多图
+     *
      * @param imageFiles 文件数组
      */
     public void shareMultiImage(File imageFiles[]) {
@@ -76,6 +82,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 创建文字分享
+     *
      * @param text      文字
      * @param title     标题
      * @param actionURL 链接
@@ -91,6 +98,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 创建图片分享
+     *
      * @param imageFile 图片文件
      * @return
      */
@@ -107,6 +115,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 创建视频分享
+     *
      * @param videoFile 视频文件
      * @return
      */
@@ -122,6 +131,7 @@ public class ShareSina extends BaseShare implements WbShareCallback {
 
     /**
      * 创建多张图分享
+     *
      * @return
      */
     private MultiImageObject getMultiImageObject(File files[]) {

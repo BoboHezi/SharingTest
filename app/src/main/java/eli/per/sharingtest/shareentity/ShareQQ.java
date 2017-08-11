@@ -4,16 +4,18 @@ import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.widget.Toast;
+
 import com.tencent.connect.share.QQShare;
 import com.tencent.tauth.IUiListener;
 import com.tencent.tauth.Tencent;
 import com.tencent.tauth.UiError;
+
 import java.io.File;
 
-public class ShareQQ extends BaseShare implements IUiListener{
+public class ShareQQ extends BaseShare implements IUiListener {
 
     private String appID = "1106253699";
-    public Tencent tencent ;
+    public Tencent tencent;
 
     public ShareQQ(Context context, Activity activity) {
         super(context, activity);
@@ -27,6 +29,7 @@ public class ShareQQ extends BaseShare implements IUiListener{
 
     /**
      * 分享图片给好友
+     *
      * @param imageFile 图片文件
      */
     public void shareImage(File imageFile) {
@@ -45,6 +48,7 @@ public class ShareQQ extends BaseShare implements IUiListener{
 
     /**
      * 分享视频给好友
+     *
      * @param videoFile
      */
     @Override
@@ -53,6 +57,7 @@ public class ShareQQ extends BaseShare implements IUiListener{
 
     /**
      * 分享图片组给好友
+     *
      * @param imageFiles
      */
     @Override

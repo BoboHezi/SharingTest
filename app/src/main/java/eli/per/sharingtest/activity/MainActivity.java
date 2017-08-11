@@ -74,6 +74,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * 设置返回页面时产生的回调接口
      * 这里返回给了微博的回调接口
      * 可以根据具体情况更改
+     *
      * @param intent
      */
     @Override
@@ -116,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                         byte buffer[] = new byte[1444];
                         int readSize;
 
-                        while ( (readSize = inputStream.read(buffer)) > 0) {
+                        while ((readSize = inputStream.read(buffer)) > 0) {
                             outputStream.write(buffer, 0, readSize);
                         }
 

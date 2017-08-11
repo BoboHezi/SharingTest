@@ -50,6 +50,7 @@ public class ShareEntity implements OnPlatformSelected {
 
     /**
      * 设置分享内容的类别
+     *
      * @param shareType
      */
     public void setShareType(int shareType) {
@@ -58,6 +59,7 @@ public class ShareEntity implements OnPlatformSelected {
 
     /**
      * 获取实体
+     *
      * @return
      */
     public ShareQQ getShareQQ() {
@@ -66,6 +68,7 @@ public class ShareEntity implements OnPlatformSelected {
 
     /**
      * 获取实体
+     *
      * @return
      */
     public ShareSina getShareSina() {
@@ -74,6 +77,7 @@ public class ShareEntity implements OnPlatformSelected {
 
     /**
      * 获取实体
+     *
      * @return
      */
     public ShareQZone getShareQZone() {
@@ -202,6 +206,7 @@ public class ShareEntity implements OnPlatformSelected {
 
     /**
      * 平台选择接口
+     *
      * @param platformID 对应平台的ID
      */
     @Override
