@@ -13,25 +13,17 @@ android {
     }
 
     signingConfigs {
-        debug {
-            storeFile file('../debug.keystore')
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-
+        eli {
+            keyAlias 'key'
+            keyPassword 'eliflichang'
+            storeFile file('C:/Users/xieqi/AndroidStudioProjects/SharingTest/sign.jks')
+            storePassword 'eliflichang'
         }
         release {
-            storeFile file('../debug.keystore')
-            storePassword "android"
-            keyAlias "androiddebugkey"
-            keyPassword "android"
-        }
-
-        aaa {
-            storeFile file('../type.keystore.jks')
-            storePassword "android"
-            keyAlias "android"
-            keyPassword "android"
+            keyAlias 'key'
+            keyPassword 'eliflichang'
+            storeFile file('C:/Users/xieqi/AndroidStudioProjects/SharingTest/sign.jks')
+            storePassword 'eliflichang'
         }
     }
     buildTypes {
