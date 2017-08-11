@@ -17,7 +17,7 @@ import java.io.File;
 
 public class BaseShareWeXin extends BaseShare {
 
-    private static final String APP_ID = "";
+    private static final String APP_ID = "wx8e34af50432b0010";
     private IWXAPI wxApi;
     private int scene = SendMessageToWX.Req.WXSceneSession;
 
