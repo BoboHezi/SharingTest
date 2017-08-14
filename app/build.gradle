@@ -13,12 +13,6 @@ android {
     }
 
     signingConfigs {
-        eli {
-            keyAlias 'key'
-            keyPassword 'eliflichang'
-            storeFile file('C:/Users/xieqi/AndroidStudioProjects/SharingTest/sign.jks')
-            storePassword 'eliflichang'
-        }
         release {
             keyAlias 'key'
             keyPassword 'eliflichang'

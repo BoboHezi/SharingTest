@@ -3,9 +3,6 @@ package eli.per.sharingtest.activity;
 import android.app.Activity;
 import android.content.Context;
 import android.widget.Toast;
-
-import java.io.File;
-
 import eli.per.sharingtest.inter.OnPlatformSelected;
 import eli.per.sharingtest.shareentity.ShareCircleFriends;
 import eli.per.sharingtest.shareentity.ShareQQ;

@@ -27,7 +27,10 @@
             </intent-filter>
         </activity>
 
-        <!-- 应用吧 -->
+        <activity
+            android:name=".wxapi.WXEntryActivity"
+            android:exported="true" />
+
         <activity
             android:name="com.tencent.open.yyb.AppbarActivity"
             android:configChanges="orientation|keyboardHidden"
@@ -47,10 +50,8 @@
             android:noHistory="true">
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
-
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-
                 <data android:scheme="tencent1106253699" />
             </intent-filter>
         </activity>

@@ -6,18 +6,21 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.provider.MediaStore;
 
+import com.tencent.mm.opensdk.modelbase.BaseReq;
+import com.tencent.mm.opensdk.modelbase.BaseResp;
 import com.tencent.mm.opensdk.modelmsg.SendMessageToWX;
 import com.tencent.mm.opensdk.modelmsg.WXImageObject;
 import com.tencent.mm.opensdk.modelmsg.WXMediaMessage;
+import com.tencent.mm.opensdk.modelmsg.WXTextObject;
 import com.tencent.mm.opensdk.modelmsg.WXVideoObject;
 import com.tencent.mm.opensdk.openapi.IWXAPI;
+import com.tencent.mm.opensdk.openapi.IWXAPIEventHandler;
 import com.tencent.mm.opensdk.openapi.WXAPIFactory;
-
 import java.io.File;
 
 public class BaseShareWeXin extends BaseShare {
 
-    private static final String APP_ID = "wx8e34af50432b0010";
+    public static final String APP_ID = "wx8e34af50432b0010";
     private IWXAPI wxApi;
     private int scene = SendMessageToWX.Req.WXSceneSession;
 
@@ -32,6 +35,10 @@ public class BaseShareWeXin extends BaseShare {
         wxApi.registerApp(APP_ID);
     }
 
+    /**
+     * 分享图片
+     * @param imageFile
+     */
     @Override
     public void shareImage(File imageFile) {
 
@@ -59,6 +66,10 @@ public class BaseShareWeXin extends BaseShare {
         wxApi.sendReq(req);
     }
 
+    /**
+     * 分享视频
+     * @param videoFile
+     */
     @Override
     public void shareVideo(File videoFile) {
         if (videoFile == null) {
@@ -75,7 +86,7 @@ public class BaseShareWeXin extends BaseShare {
         mediaMessage.description = "描述";
 
         //为视频设置缩略图
-        Bitmap thumb = eli.per.sharingtest.util.Util.getVideoThumbnail(videoFile.getPath(), 500, 350, MediaStore.Images.Thumbnails.FULL_SCREEN_KIND);
+        Bitmap thumb = eli.per.sharingtest.util.Util.getVideoThumbnail(videoFile.getPath(), 100, 100, MediaStore.Images.Thumbnails.FULL_SCREEN_KIND);
         mediaMessage.thumbData = eli.per.sharingtest.util.Util.bitmap2ByteArray(thumb, true);
 
         //构造Req
@@ -87,6 +98,10 @@ public class BaseShareWeXin extends BaseShare {
         wxApi.sendReq(req);
     }
 
+    /**
+     * 分享多图
+     * @param imageFiles
+     */
     @Override
     public void shareMultiImage(File[] imageFiles) {
 
@@ -94,7 +109,6 @@ public class BaseShareWeXin extends BaseShare {
 
     /**
      * 设置分享的平台  好友/朋友圈
-     *
      * @param scene
      */
     public void setScene(int scene) {

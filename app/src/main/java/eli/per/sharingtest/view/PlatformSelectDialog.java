@@ -9,7 +9,6 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageButton;
-
 import eli.per.sharingtest.R;
 import eli.per.sharingtest.activity.ShareEntity;
 import eli.per.sharingtest.inter.OnPlatformSelected;
