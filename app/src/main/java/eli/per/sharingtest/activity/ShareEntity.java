@@ -31,10 +31,10 @@ public class ShareEntity implements OnPlatformSelected {
     private Context context;
     private Activity activity;
 
-    private ShareSina shareSina;
-    private ShareQQ shareQQ;
-    private ShareQZone shareQZone;
-    private ShareWeChat shareWeChat;
+    private ShareSina shareToSina;
+    private ShareQQ shareToQQ;
+    private ShareQZone shareToQZone;
+    private ShareWeChat shareToWeChat;
 
     public ShareEntity(Context context, Activity activity) {
         this.context = context;
@@ -59,8 +59,8 @@ public class ShareEntity implements OnPlatformSelected {
      *
      * @return
      */
-    public ShareQQ getShareQQ() {
-        return this.shareQQ;
+    public ShareQQ getShareToQQ() {
+        return this.shareToQQ;
     }
 
     /**
@@ -68,8 +68,8 @@ public class ShareEntity implements OnPlatformSelected {
      *
      * @return
      */
-    public ShareSina getShareSina() {
-        return this.shareSina;
+    public ShareSina getShareToSina() {
+        return this.shareToSina;
     }
 
     /**
@@ -77,8 +77,8 @@ public class ShareEntity implements OnPlatformSelected {
      *
      * @return
      */
-    public ShareQZone getShareQZone() {
-        return this.shareQZone;
+    public ShareQZone getShareToQZone() {
+        return this.shareToQZone;
     }
 
     /**
@@ -88,19 +88,19 @@ public class ShareEntity implements OnPlatformSelected {
         if (shareType == SHARE_TYPE_TEXT)
             return;
 
-        shareSina = new ShareSina(context, activity);
+        shareToSina = new ShareSina(context, activity);
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享单张图片
-                shareSina.shareImage(null);
+                shareToSina.shareImage(null);
                 break;
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareSina.shareVideo(null);
+                shareToSina.shareVideo(null);
                 break;
             case SHARE_TYPE_MULTIIMAGE:
                 //分享多张图片
-                shareSina.shareMultiImage(null);
+                shareToSina.shareMultiImage(null);
                 break;
         }
         shareType = SHARE_TYPE_TEXT;
@@ -113,11 +113,11 @@ public class ShareEntity implements OnPlatformSelected {
         if (shareType == SHARE_TYPE_TEXT)
             return;
 
-        shareQQ = new ShareQQ(context, activity);
+        shareToQQ = new ShareQQ(context, activity);
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享单张图片
-                shareQQ.shareImage(null);
+                shareToQQ.shareImage(null);
                 break;
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();
@@ -133,19 +133,19 @@ public class ShareEntity implements OnPlatformSelected {
         if (shareType == SHARE_TYPE_TEXT)
             return;
 
-        shareQZone = new ShareQZone(context, activity);
+        shareToQZone = new ShareQZone(context, activity);
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享单张图片
-                shareQZone.shareImage(null);
+                shareToQZone.shareImage(null);
                 break;
             case SHARE_TYPE_VIDEO:
                 //分享视频
-                shareQZone.shareVideo(null);
+                shareToQZone.shareVideo(null);
                 break;
             case SHARE_TYPE_MULTIIMAGE:
                 //分享多张图片
-                shareQZone.shareMultiImage(null);
+                shareToQZone.shareMultiImage(null);
                 break;
         }
         shareType = SHARE_TYPE_TEXT;
@@ -158,15 +158,15 @@ public class ShareEntity implements OnPlatformSelected {
         if (shareType == SHARE_TYPE_TEXT)
             return;
 
-        shareWeChat = new ShareWeChat(context, activity);
+        shareToWeChat = new ShareWeChat(context, activity);
         switch (shareType) {
             case SHARE_TYPE_PHOTO:
                 //分享图片
-                shareWeChat.shareImage(null);
+                shareToWeChat.shareImage(null);
                 break;
             case SHARE_TYPE_MULTIIMAGE:
                 //分享多图
-                shareWeChat.shareMultiImage(null);
+                shareToWeChat.shareMultiImage(null);
                 break;
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();

@@ -80,18 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     protected void onNewIntent(Intent intent) {
         super.onNewIntent(intent);
-        if (shareEntity.getShareSina() != null) {
-            shareEntity.getShareSina().getShareHandler().doResultIntent(intent, shareEntity.getShareSina());
+        if (shareEntity.getShareToSina() != null) {
+            shareEntity.getShareToSina().getShareHandler().doResultIntent(intent, shareEntity.getShareToSina());
         }
     }
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (shareEntity.getShareQQ() != null) {
-            shareEntity.getShareQQ().tencent.onActivityResult(requestCode, resultCode, data);
+        if (shareEntity.getShareToQQ() != null) {
+            shareEntity.getShareToQQ().tencent.onActivityResult(requestCode, resultCode, data);
         }
-        if (shareEntity.getShareQZone() != null) {
-            shareEntity.getShareQZone().tencent.onActivityResult(requestCode, resultCode, data);
+        if (shareEntity.getShareToQZone() != null) {
+            shareEntity.getShareToQZone().tencent.onActivityResult(requestCode, resultCode, data);
         }
     }
 
