@@ -164,14 +164,13 @@ public class ShareEntity implements OnPlatformSelected {
                 //分享图片
                 shareWeChat.shareImage(null);
                 break;
-            case SHARE_TYPE_VIDEO:
-                //分享视频
-                shareWeChat.shareVideo(null);
+            case SHARE_TYPE_MULTIIMAGE:
+                //分享多图
+                shareWeChat.shareMultiImage(null);
                 break;
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();
         }
-
         shareType = SHARE_TYPE_TEXT;
     }
 
@@ -188,16 +187,13 @@ public class ShareEntity implements OnPlatformSelected {
                 //分享图片
                 shareCircleFriends.shareImage(null);
                 break;
-
-            case SHARE_TYPE_VIDEO:
-                //分享视频
-                shareCircleFriends.shareVideo(null);
+            case SHARE_TYPE_MULTIIMAGE:
+                //分享多图
+                shareCircleFriends.shareMultiImage(null);
                 break;
-
             default:
                 Toast.makeText(context, "No Way", Toast.LENGTH_SHORT).show();
         }
-
         shareType = SHARE_TYPE_TEXT;
     }
 
